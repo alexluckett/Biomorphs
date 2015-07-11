@@ -7,8 +7,6 @@ import org.junit.Test;
 
 import controller.FixedSizeStack;
 
-
-
 /**
  * Test cases for the Fixed size stack
  * 

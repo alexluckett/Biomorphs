@@ -58,7 +58,7 @@ public class GenomeTest {
 			}
 		});
 		
-		genome.setAngle(24232); // fires a property change notification which will active above test
+		genome.setAngle(24232); // fires a property change notification which will trigger above test
 	}
 	
 	@Test

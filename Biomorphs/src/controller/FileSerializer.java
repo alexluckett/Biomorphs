@@ -10,24 +10,23 @@ import java.io.ObjectOutputStream;
  * Serialises objects of type T.
  * 
  * @author Alex Luckett <lucketta@aston.ac.uk>
- * @author Mohammed Hussain Ahmed<ahmedmh@aston.ac.uk>
- * @author Jurgen Hajdini<hajdinij@aston.ac.uk>
- * @author Kelvin Chui <chuikll@aston.ac.uk>
  * 
  * @param <T> type of class
  */
 public class FileSerializer<T> {
 
-	public FileSerializer() { } // doesn't need instantiating
+	public FileSerializer() { }
 	
 	public void serialiseFile(T object, String path) throws IOException {
 		FileOutputStream fileOutput = new FileOutputStream(path);
 		ObjectOutputStream objectOutput = new ObjectOutputStream(fileOutput);
 		
-		objectOutput.writeObject(object);
-		
-		objectOutput.close();
-		fileOutput.close();
+		try {
+			objectOutput.writeObject(object);
+		} finally {
+			objectOutput.close();
+			fileOutput.close();
+		}		
 	}
 	
 	@SuppressWarnings("unchecked") // only way to work around this unfortunately. still safe as it will throw exception.
