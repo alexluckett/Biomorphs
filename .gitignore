@@ -1,0 +1,7 @@
+/bin/
+/hallOfFame/
+
+# Eclipse
+.classpath
+.project
+.settings/
